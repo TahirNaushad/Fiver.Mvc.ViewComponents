@@ -1,0 +1,18 @@
+﻿@using Fiver.Mvc.ViewComponents.Models.Home
+@model EmployeeViewModel
+
+<div style="border: 1px solid black; margin: 5px">
+    <h2>Employee Details (view)</h2>
+
+    <p>Id: @Model.Id</p>
+    <p>Firstname: @Model.Firstname</p>
+    <p>Surname: @Model.Surname</p>
+
+    @await Component.InvokeAsync("Address", new { employeeId = Model.Id })
+</div>
+
+@await Component.InvokeAsync("UserInfo")
+
+
+
+

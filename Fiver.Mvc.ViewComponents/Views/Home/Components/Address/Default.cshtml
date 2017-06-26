@@ -1,0 +1,12 @@
+﻿@using Fiver.Mvc.ViewComponents.Models.Home
+@model AddressViewModel
+
+<div style="border: 1px dashed red; margin: 5px">
+    <h3>Address Details (view component in Views/Home)</h3>
+
+    <p>Employee: @Model.EmployeeId</p>
+    <p>Line1: @Model.Line1</p>
+    <p>Line2: @Model.Line2</p>
+    <p>Line3: @Model.Line3</p>
+    <p>Full Address: @Model.FormattedValue</p>
+</div>
