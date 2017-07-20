@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET Core View Components</title>
+
+    <script src="~/js/jquery.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <h1>ASP.NET Core View Components</h1>
+
+        <input type="button" id="GetViewComponent" value="Get View Component" />
+
+        <div id="result"></div>
+    </div>
+    <script>
+        $(function () {
+            $("#GetViewComponent").click(function () {
+
+                $.ajax({
+                    method: 'GET',
+                    url: '@Url.Action("UserInfo", "Components")'
+                }).done(function (data, statusText, xhdr) {
+                    $("#result").html(data);
+                }).fail(function (xhdr, statusText, errorText) {
+                    $("#result").text(JSON.stringify(xhdr));
+                });
+
+            });
+        });
+    </script>
+</body>
+</html>
+

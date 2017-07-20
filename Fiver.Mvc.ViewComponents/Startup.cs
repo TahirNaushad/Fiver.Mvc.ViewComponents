@@ -27,6 +27,7 @@ namespace Fiver.Mvc.ViewComponents
             ILoggerFactory loggerFactory)
         {
             app.UseDeveloperExceptionPage();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
